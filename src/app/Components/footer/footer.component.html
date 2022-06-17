@@ -1,0 +1,63 @@
+<div class="footer-page">
+  <div class="container">
+    <img id="footer-img" src="../../../assets/imgs/Coffee.png" alt="#" />
+    <div class="btn-up">
+      <img id="btn-up-img" src="../../../assets/imgs/Vector 20.png" alt="" />
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="contacts-info">
+        <div class="contacts-info-container">
+          <div class="info-about">
+            <p class="info">Full Name</p>
+            <input type="text" required name="fullname" ngModel #fullname="ngModel" />
+            <div *ngIf="fullname.invalid && fullname.touched" class="error-message">
+              <p>Full name is required</p>
+            </div>
+          </div>
+          <div class="info-about">
+            <p class="info">Company Name</p>
+            <input
+              id="company-input"
+              type="text"
+			  required
+              name="companyname"
+              ngModel
+              #companyname="ngModel"
+            />
+            <div *ngIf="companyname.invalid && companyname.touched" class="error-message">
+				<p>Company name is required</p>
+			</div>
+          </div>
+          <div class="info-about">
+            <p class="info">Phone Number</p>
+            <input
+              type="text"
+			  required
+              name="phonenumber"
+              ngModel
+			  maxlength="12"
+              #phonenumber="ngModel"
+			  (keypress)="OnlyNumbersAllowed($event)"
+            />
+            <div *ngIf="phonenumber.invalid && phonenumber.touched" class="error-message">
+              <p>Phone number is required</p>
+            </div>
+          </div>
+          <div class="info-about">
+            <p class="info">E-mail</p>
+            <input type="text" required name="email" ngModel #email="ngModel" />
+            <div *ngIf="email.invalid && email.touched" class="error-message">
+              <p>Email is required</p>
+            </div>
+          </div>
+          <div class="info-about">
+            <p class="info">Write Us Messages</p>
+            <input type="text"/>
+          </div>
+          <button type="submit" class="message">Send Message</button>
+		  <h1>{{this.message}}</h1>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
