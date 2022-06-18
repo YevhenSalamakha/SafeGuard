@@ -1,8 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 
+@mixin ubuntu-500 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+
+@mixin ubuntu-400 {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .footer-page {
   .container {
-    width: 1170px;
+    max-width: 1170px;
 
     #footer-img {
       margin-top: 85px;
@@ -25,14 +39,13 @@
     }
 
     .contacts-info {
+      @include ubuntu-400;
       width: 1170px;
       margin-left: 39.5%;
       margin-top: 31px;
       margin-bottom: 63px;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
       border-radius: 30px;
-      font-family: "Ubuntu", sans-serif;
-      font-weight: 400;
 
       .contacts-info-container {
         max-width: 511px;
@@ -46,20 +59,18 @@
 
           .error-message {
             p {
+              @include ubuntu-400;
               margin-top: 4px;
-              font-family: "Ubuntu", sans-serif;
-              font-weight: 400;
-			  font-size: 12px;
-			  color: red;
+              font-size: 12px;
+              color: red;
             }
           }
         }
 
         .message {
+          @include ubuntu-500;
           margin-top: 50px;
           margin-bottom: 71px;
-          font-family: "Ubuntu", sans-serif;
-          font-weight: 500;
           width: 170px;
           height: 61px;
           background: #ffbc00;

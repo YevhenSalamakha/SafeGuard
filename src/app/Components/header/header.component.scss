@@ -1,6 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 
+@mixin black-color {
+  color: #000000;
+}
+
+@mixin anton-400 {
+  font-family: "Anton", sans-serif;
+  font-style: normal;
+}
+
+@mixin ubuntu-500 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+
+@mixin ubuntu-400 {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .header-page {
   background: #ffbc00;
 
@@ -12,6 +35,7 @@
       justify-content: space-between;
 
       #logo {
+        @include ubuntu-500;
         padding-left: 460px;
         padding-top: 56px;
         color: #000000;
@@ -28,11 +52,9 @@
         }
 
         .link {
-          font-family: "Ubuntu", sans-serif;
-          font-weight: 500;
-          font-size: 18px;
+          @include ubuntu-500;
+          @include black-color;
           line-height: 21px;
-          color: #111111;
           padding-left: 50px;
           text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
             0px -4px 10px rgba(255, 255, 255, 0.3);
@@ -40,7 +62,7 @@
         .brd {
           background-color: white;
           position: absolute;
-          left: 77%;
+          left: 75%;
           top: 56px;
           width: 138px;
           height: 50px;
@@ -48,11 +70,9 @@
           margin-left: 26px;
 
           #contact {
-            font-family: "Ubuntu", sans-serif;
-            font-weight: 500;
-            font-size: 18px;
+            @include ubuntu-500;
+            @include black-color;
             line-height: 21px;
-            color: #000000;
           }
 
           li {
@@ -67,7 +87,7 @@
     .img {
       margin-left: 60%;
       margin-top: 5%;
-      width: 726px;
+      width: 626px;
     }
 
     .header-content {
@@ -75,22 +95,18 @@
       top: 32%;
       left: 20%;
       .header-title {
-        font-family: "Anton", sans-serif;
-        font-style: normal;
+        @include anton-400;
+        @include black-color;
         width: 437px;
         font-size: 68px;
         line-height: 130%;
         text-transform: uppercase;
-        color: #000000;
       }
 
       .header-subtitle {
+        @include ubuntu-400;
         margin-top: 33px;
         margin-left: 80px;
-        font-family: "Ubuntu", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
         width: 560px;
         text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
           0px -4px 10px rgba(255, 255, 255, 0.3);
@@ -98,17 +114,14 @@
 
       .btn-container {
         button {
-          font-family: "Ubuntu";
+          @include ubuntu-500;
+          @include black-color;
           margin-top: 63px;
           margin-left: 77px;
           width: 176px;
           height: 65px;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
           line-height: 21px;
           text-align: center;
-          color: #111111;
           background-color: #ffffff;
           box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.72);
           border-radius: 16px;
