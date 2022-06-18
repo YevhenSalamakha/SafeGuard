@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,19 +6,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  message!: string;
+  formJSON: any;
+  formValue: any;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onSubmit(f: NgForm) {
-    if (f.valid) {
-      this.message = 'The form is VALID';
-    }
-    if (f.invalid) {
-      this.message = 'The form is INVALID';
-    }
+  onSubmit(data: any) {
+    this.formValue = data;
+
+    this.sendData();
+  }
+
+  sendData() {
+    this.formJSON = JSON.stringify(this.formValue);
+    localStorage.setItem('UserData', this.formJSON);
+
   }
 
   OnlyNumbersAllowed(event: { which: any; keyCode: any }) {
