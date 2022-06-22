@@ -1,15 +1,23 @@
-<div class="footer-page">
-  <div class="container">
-    <img id="footer-img" src="../../../assets/imgs/Coffee.png" alt="#" />
-    <div class="btn-up">
-      <img id="btn-up-img" src="../../../assets/imgs/Vector 20.png" alt="" />
+<div class="container breakpoints">
+  <div class="row">
+    <div class="col-9">
+      <img id="footer-img" src="../../../assets/imgs/Coffee.png" alt="#" />
     </div>
+    <div class="col-1">
+      <div class="btn-up">
+        <img id="btn-up-img" src="../../../assets/imgs/Vector 20.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container-breakpoints">
     <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)">
       <div class="contacts-info">
-        <div class="contacts-info-container">
+        <div class="contacts-info-container col-lg-12 col-md-3 col-sm-3">
           <div class="info-about">
             <p class="info">Full Name</p>
             <input
+              class="col-lg-5"
               type="text"
               required
               name="fullname"
@@ -26,6 +34,7 @@
           <div class="info-about">
             <p class="info">Company Name</p>
             <input
+              class="col-lg-5"
               id="company-input"
               type="text"
               required
@@ -43,6 +52,7 @@
           <div class="info-about">
             <p class="info">Phone Number</p>
             <input
+              class="col-lg-5"
               type="text"
               required
               name="phonenumber"
@@ -60,14 +70,21 @@
           </div>
           <div class="info-about">
             <p class="info">E-mail</p>
-            <input type="text" required name="email" ngModel #email="ngModel" />
+            <input
+              class="col-lg-5"
+              type="text"
+              required
+              name="email"
+              ngModel
+              #email="ngModel"
+            />
             <div *ngIf="email.invalid && email.touched" class="error-message">
               <p>Email is required</p>
             </div>
           </div>
           <div class="info-about">
             <p class="info">Write Us Messages</p>
-            <input type="text" />
+            <input class="col-lg-5" type="text" />
           </div>
           <button type="submit" class="message">Send Message</button>
         </div>
