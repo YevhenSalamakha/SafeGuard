@@ -22,13 +22,12 @@ export class FooterComponent implements OnInit {
   sendData() {
     this.formJSON = JSON.stringify(this.formValue);
     localStorage.setItem('UserData', this.formJSON);
-
   }
 
   OnlyNumbersAllowed(event: { which: any; keyCode: any }) {
     const charCode = event.which ? event.which : event.keyCode;
 
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    if ((charCode > 31 && charCode < 48) || charCode > 57) {
       return false;
     }
     return true;
